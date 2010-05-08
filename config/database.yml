@@ -14,7 +14,7 @@ test:
   <<: *non_production_settings
   database: mpower_test
 
-prod:
+production:
   <<: *non_production_settings
   database: flintero_mpower
   username: flintero_mpower
