@@ -3,9 +3,6 @@ set :user, 'flintero'
 set :domain, 'mpower.flinter.org'
 set :host, "aether.site5.com"
 set :application, "mpower"
-# set :repository,  "#{repo_user}@flinter.org:/home/#{repo_user}/git/#{application}.git"
-# set :repository, "file:///home/flintero/git/mpower.git"
-# set :local_repository, "file:///home/flintero/git/mpower.git"
 set :repository,  "git://github.com/#{repo_user}/#{application}.git"
 set :deploy_to, "/home/#{user}/#{application}"
 #default_run_options[:pty] = true
@@ -13,6 +10,7 @@ set :deploy_to, "/home/#{user}/#{application}"
 # misc options
 set :scm, 'git'
 set :deploy_via, :remote_cache
+set :git_enable_submodule, 1
 set :branch, 'master'
 set :scm_verbose, true
 set :use_sudo, false
