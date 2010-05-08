@@ -5,12 +5,13 @@ RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
- require 'desert'
+require 'rubygems'
+require 'desert'
 
 
 Rails::Initializer.run do |config|
   config.plugins = [:community_engine, :white_list, :all]
-config.plugin_paths += ["#{RAILS_ROOT}/vendor/plugins/community_engine/plugins"]
+  config.plugin_paths += ["#{RAILS_ROOT}/vendor/plugins/community_engine/plugins"]
 
   config.gem 'searchlogic'
   config.gem 'authlogic'
