@@ -17,6 +17,8 @@
         %p
           =:this_is_your_dashboard.l
         %p
+          =link_to "Add a cause", new_user_cause_path(current_user)
+        %p
           =:dashboard_friends.l :site => AppConfig.community_name
           %br
           =:to_start_adding_friends.l

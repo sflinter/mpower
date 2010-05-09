@@ -1,0 +1,15 @@
+- @section = 'causes'
+
+.yui-b
+  -box do 
+    %h3= :causes.l
+    = :find_out_where_to_be_and_when_to_be_there.l
+#yui-main
+  .yui-b
+    -box do 
+    
+      .pagination=paginating_links @causes if @causes.page_count > 1      
+
+      = render :partial=>'cause', :collection=>@causes, :locals=>{:show_details_link=>true}
+
+      .pagination=paginating_links @causes if @causes.page_count > 1      

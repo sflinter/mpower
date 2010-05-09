@@ -1,0 +1,16 @@
+-box do
+  %h3= "New Cause"
+  = error_messages_for :cause
+  - form_for(:cause, :url => causes_path, :html => {:class => "MainForm"} ) do |f|
+    %label= :name.l
+    = f.text_field :name
+    
+    %label= :description.l
+    = f.text_area :description, :size => "69x10", :class => "rich_text_editor"
+    
+    %h3= :metro_area.l   
+    = render :partial => 'shared/location_chooser', :locals => {:selected_country => @country_id, :selected_state => @state_id, :selected_metro_area => @metro_area_id, :states => @states, :metro_areas => @metro_areas}
+    %p
+      = submit_tag :create.l
+
+  = link_to :back.l, :back

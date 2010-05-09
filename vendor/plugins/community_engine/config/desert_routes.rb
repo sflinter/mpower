@@ -101,6 +101,8 @@ resources :ads
 resources :contests, :collection => { :current => :get }
 resources :activities
 
+resources :causes
+
 resources :users, :member_path => '/:id', :nested_member_path => '/:user_id', :member => { 
     :dashboard => :get,
     :assume => :get,
@@ -139,6 +141,7 @@ resources :users, :member_path => '/:id', :nested_member_path => '/:user_id', :m
   user.resources :photo_manager, :only => ['index']
   user.resources :albums, :path_prefix => ':user_id/photo_manager', :member => {:add_photos => :get, :photos_added => :post}, :collection => {:paginate_photos => :get}  do |album| 
     album.resources :photos, :collection => {:swfupload => :post, :slideshow => :get}
+  user.resources :causes
   end
 end
 resources :votes

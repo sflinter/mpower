@@ -1,0 +1,7 @@
+- @section = 'causes'
+
+#yui-main
+  .yui-b
+    -box :class=>'cause-content cause-content' do 
+      = render :partial=>'cause', :locals=>{:cause=>@cause, :show_details_link=>false}
+      = @cause.description
