@@ -90,8 +90,6 @@ img.polaroid {
 /* 2. HEADER                                       */
 /* =============================================== */
 
-#hd{border-top: 4px solid #780000;}
-
 #hd h1{float: left;}
 
 #hd h1 a{
@@ -101,7 +99,7 @@ text-transform: uppercase;
 text-decoration: none;
 display: block;
 margin: 20px 0 10px 0;
-color: #464337;
+color: #f38421;
 }
 
 #hd h1 a:hover{text-decoration: underline;}
@@ -124,13 +122,22 @@ background-position: left center;
 
 /* Navbar */
 
-#NavBar{
-background: #aba8a3 url(/plugin_assets/community_engine/images/bg_navbar.gif) repeat-x 0 0;
-border-top: 1px solid #d9d6d3;
-clear: both;
-}
+/* 
+   Removed from original NavBar:
+   background: #FFa8a3 url(/plugin_assets/community_engine/images/bg_navbar.gif) repeat-x 0 0; 
+   clear: both;
+*/
 
-#NavBar ul, #NavBar ul li{float: left;}
+#NavBar{
+background: #f38421 url(/plugin_assets/community_engine/images/Header.png) no-repeat;
+border-top: 1px solid #d9d6d3;
+min-height: 110px;
+vertical-align: bottom;
+}
+/* 
+*/
+/* The float below controls the alignment of items in the NavBar*/
+#NavBar ul, #NavBar ul li{float: right; vertical-align: bottom;}
 
 #NavBar ul li a{
 display: block;
@@ -139,16 +146,18 @@ padding: 15px 10px;
 text-transform: uppercase;
 font-weight: bold;
 border-right: 1px solid #fff;
-color: #464337;
+color: #FFFFFF;
 text-decoration: none;
+vertical-align: bottom;
 }
 
 #NavBar ul li#active a, #NavBar ul li.current a{
-background: #fff;
+background: #e9e6e3;
 text-decoration: none !important;
 }
 
 #NavBar ul li a:hover{text-decoration: underline;}
+
 
 #NavBar form{float: right;}
 
@@ -168,7 +177,7 @@ border: none;
 /* =============================================== */
 
 #welcome .box{
-background: #fff1b2;
+background: #ffffff;
 margin-top: 1em;
 padding: 1em;
 border-bottom: 2px solid #ffd735;
@@ -218,6 +227,7 @@ background-color: #9ec500;
 
 .box{
 margin-bottom: 1em;
+width: 80%;
 }
 
 .box h2{
@@ -230,13 +240,13 @@ font-size: 153.9%;
 font-size: 123.1%;
 font-weight: bold;
 text-transform: uppercase;
-border-bottom: 1px solid #ffd735;
+border-bottom: 1px solid #f38421;
 margin:1.5em 0 1em 0;
 }
 
 .alt{
-border: 1px solid #94beff;
-background: #e1ecff;
+border: 1px solid #f38421;
+background: #FF9900;
 padding: 1em;
 }
 
@@ -244,8 +254,8 @@ padding: 1em;
 border: none;
 margin: 0 0 .5em 0;
 padding: .5em;
-background: #94beff;
-color: #38465b;
+background: #f38421;
+color: #FFCC00;
 }
 
 .first_alt {
@@ -652,7 +662,10 @@ margin-left:  12.3846em; /* about 200px - 3em*/
 
 #CommunityFooter{
 margin: 20px 0;
-font-size: 85%;}
+font-size: 85%;
+background: #f38421;
+color: #ffffff;
+}
 
 #CommunityFooter ul, #CommunityFooter ul li{float: left;}
 
@@ -663,7 +676,7 @@ border-left: 1px solid #ccc;
 }
 
 #CommunityFooter li#rss a{
-color: #fff;
+color: #fffFFF;
 background: orange;
 text-decoration: none;
 }
@@ -674,11 +687,12 @@ border: none;
 padding-left: 0;
 }
 
-
-#CommunityFooter p{
-float: right;
+/*
 padding: 2px 0 2px 120px;
 background: url(/plugin_assets/community_engine/images/logo.gif) no-repeat left center;
+*/
+#CommunityFooter p{
+float: right;
 }
 
 /* =============================================== */
@@ -1050,3 +1064,5 @@ table.poll {
    border:0;
    vertical-align:middle;
 }
+
+
