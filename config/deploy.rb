@@ -10,7 +10,6 @@ set :deploy_to, "/home/#{user}/#{application}"
 # misc options
 set :scm, 'git'
 set :deploy_via, :remote_cache
-set :git_enable_submodules, 1
 set :branch, 'master'
 set :scm_verbose, true
 set :use_sudo, false
@@ -35,7 +34,4 @@ namespace :deploy do
   end
 end
 
-after 'deploy:update_code' do
-  'deploy:symlink_shared'
-  run "rake -f #{current_path}/Rakefile gems:build"
-end
+after 'deploy:update_code', 'deploy:symlink_shared'
