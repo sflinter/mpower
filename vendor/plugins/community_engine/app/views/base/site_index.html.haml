@@ -5,6 +5,12 @@
 
 #yui-main
   .yui-b
+    -box :class => "causes" do
+      %h3 Local Causes
+      = render :partial => 'causes/cause', :collection => @causes
+      %h6.all= link_to "See all causes", recent_path
+       
+  .yui-b
     -box :class => "hfeed" do 
       %h3
         =:recent_posts.l
