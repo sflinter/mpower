@@ -33,7 +33,7 @@ class BaseController < ApplicationController
   end
 
   def site_index
-    @causes = Cause.find(:all)
+    @causes = Cause.find(:all, :order => 'created_at DESC')
     @posts = Post.find_recent
 
     @rss_title = "#{AppConfig.community_name} "+:recent_posts.l

@@ -29,7 +29,7 @@ class CausesController < BaseController
   end
 
   def index
-    @causes = Cause.find(:all, :page => {:current => params[:page]})
+    @causes = Cause.find(:all, :order => 'created_at DESC', :page => {:current => params[:page]})
   end
 
   def new
