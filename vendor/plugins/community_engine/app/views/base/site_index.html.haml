@@ -8,7 +8,7 @@
     -box :class => "causes" do
       %h3 Local Causes
       = render :partial => 'causes/cause', :collection => @causes
-      %h6.all= link_to "See all causes", recent_path
+      %h6.all= link_to "See all causes", causes_path
        
   .yui-b
     -box :class => "hfeed" do 
