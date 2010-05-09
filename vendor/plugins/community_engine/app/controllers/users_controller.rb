@@ -88,6 +88,7 @@ class UsersController < BaseController
     @recent_posts   = @user.posts.find(:all, :limit => 2, :order => "published_at DESC")
     @clippings      = @user.clippings.find(:all, :limit => 5)
     @photos         = @user.photos.find(:all, :limit => 5)
+    @causes         = @user.causes.find(:all, :limit => 5)
     @comment        = Comment.new(params[:comment])
     
     @my_activity = Activity.recent.by_users([@user.id]).find(:all, :limit => 10) 

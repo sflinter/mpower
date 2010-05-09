@@ -6,6 +6,3 @@
     = link_to :edit.l, edit_cause_path(cause)
     |
     = link_to :destroy.l, cause_path(cause), :confirm => :are_you_sure.l, :method => :delete
-- if show_details_link
-  %p= link_to :cause_details.l, cause_url(cause)
-

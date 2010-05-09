@@ -72,6 +72,12 @@
       -box :class => "alt first_alt" do 
         %h3= :small_profile.l :user => @user.login
 
+    - unless @causes.empty?
+      -box :id => "causes" do
+        %h3 My Causes
+        %ul
+          - @causes.each do |cause|
+            %li= link_to cause.name, user_cause_path(@user, cause)
     - unless @photos.empty?
       -box :id => "photos" do
         %h3=:my_photos.l
