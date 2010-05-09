@@ -78,6 +78,7 @@
         %ul
           - @causes.each do |cause|
             %li= link_to cause.name, user_cause_path(@user, cause)
+        = "#{link_to("Create a new cause", new_user_cause_path(@user))}" if @is_current_user
     - unless @photos.empty?
       -box :id => "photos" do
         %h3=:my_photos.l

@@ -100,10 +100,11 @@ class CausesController < BaseController
   # DELETE /homepage_features/1.xml
   def destroy
     @cause = Cause.find(params[:id])
+    user = @cause.user
     @cause.destroy
     
     respond_to do |format|
-      format.html { redirect_to :back }
+      format.html { redirect_to user_path(user) }
     end
   end
 
